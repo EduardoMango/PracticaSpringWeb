@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class UserRepository {
+public class UserRepository implements IRepository<UserEntity> {
 
     private List<UserEntity> users;
 
@@ -37,7 +37,7 @@ public class UserRepository {
     }
 
     public List<UserEntity> findAll() {
-        return users;
+        return List.copyOf(users);
     }
 
     public void save(UserEntity user) {

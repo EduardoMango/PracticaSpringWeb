@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class ProductRepository {
+public class ProductRepository implements IRepository<ProductEntity> {
 
     private List<ProductEntity> products;
 
@@ -37,7 +37,7 @@ public class ProductRepository {
     }
 
     public List<ProductEntity> findAll() {
-        return products;
+        return List.copyOf(products);
     }
 
     public void save(ProductEntity product) {

@@ -3,7 +3,7 @@ package org.eduardomango.practicaspringweb.model.services;
 
 import org.eduardomango.practicaspringweb.model.entities.UserEntity;
 import org.eduardomango.practicaspringweb.model.exceptions.UserNotFoundException;
-import org.eduardomango.practicaspringweb.model.repositories.UserRepository;
+import org.eduardomango.practicaspringweb.model.repositories.IRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final IRepository<UserEntity> userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(IRepository<UserEntity> userRepository) {
         this.userRepository = userRepository;
     }
 
